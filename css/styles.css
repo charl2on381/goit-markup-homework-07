@@ -38,6 +38,7 @@
 
   --background-color-service-btn: #f4f4fd;
   --accent-background-color-service-btn: #404bbf;
+  --accent-background-color: #404bbf;
 
   --background-color-footer: #2e2f42;
 }
@@ -389,7 +390,71 @@ body {
   .logo-header {
     margin-right: 120px;
   }
-  .menu {
+
+    .menu {
+      display: flex;
+      gap: 40px;
+      /* margin-left: 76px; */
+    }
+  
+    .menu-item {
+      /* Body Medium */
+      font-family: inherit;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0.32px;
+    }
+  
+    .menu-link {
+      color: var(--secondary-text-color);
+      position: relative;
+      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  
+    .menu-link.active::after {
+      content: '';
+      height: 4px;
+      width: 100%;
+      border-radius: 2px;
+      background: var(--accent-background-color);
+      position: absolute;
+      left: 0;
+      bottom: -27px;
+      opacity: 1;
+      transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+  
+    }
+  
+    .menu-link::after {
+      content: '';
+      height: 4px;
+      width: 100%;
+      border-radius: 2px;
+      background: var(--accent-background-color);
+      position: absolute;
+      left: 0;
+      bottom: -27px;
+      opacity: 0;
+      transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+  
+    }
+  
+    .menu-link:hover::after,
+    .menu-link:focus::after {
+      opacity: 1;
+  
+    }
+  
+    .menu-link:hover,
+    .menu-link:focus,
+    .active {
+      color: var(--accent-background-color);
+    }
+  /* .menu {
     display: flex;
     align-items: center;
     gap: 40px;
@@ -423,7 +488,7 @@ body {
   .menu-link:hover,
   .menu-link:focus {
     color: var(--accent-color-menu-link);
-  }
+  } */
   .address-item:not(:last-child) {
     margin-bottom: 12px;
   }
@@ -1249,6 +1314,12 @@ body {
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.48px;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-form-input:hover,
+.footer-form-input:focus {
+  border-color: var(--accent-background-color);
 }
 
 /* Tablet styles >=768px */
@@ -1294,7 +1365,7 @@ body {
 }
 .footer-form-btn:hover,
 .footer-form-btn:focus {
-  background-color: #31d0aa;
+  background-color: var(--accent-background-color);
 }
 
 .footer-form-btn-icon {
@@ -1439,6 +1510,7 @@ body {
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.modal-form-input:hover,
 .modal-form-input:focus {
   outline: none;
   border: 1px solid#4D5AE5;
@@ -1481,6 +1553,7 @@ body {
   letter-spacing: 0.48px;
 }
 
+.modal-form-message:hover,
 .modal-form-message:focus {
   outline: none;
   border: 1px solid#4D5AE5;
