@@ -547,7 +547,7 @@ body {
   background-color: var(--background-color-hero);
   padding-top: 112px;
   padding-bottom: 112px;
-  max-width: 428px;
+  max-width: 856px;
   margin-left: auto;
   margin-right: auto;
   background-image: linear-gradient(
@@ -575,7 +575,7 @@ body {
 /* Tablet styles >=768px */
 @media screen and (min-width: 768px) {
   .hero {
-    max-width: 768px;
+    max-width: 1536px;
     
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
